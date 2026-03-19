@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ohio Social Services — Accenture Market Intelligence 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,'Times New Roman',serif;background:#f4f3f0;color:#1c1917;display:flex;min-height:100vh}
+/* NAV */
+#nav{width:196px;background:#1c1917;position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;overflow-y:auto}
+.nav-top{padding:20px 16px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-label{font-family:Arial,sans-serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:3px}
+.nav-firm{font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#fff}
+.nav-sub{font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,.3);margin-top:3px;line-height:1.4}
+.nav-links{flex:1;padding:8px 0}
+.nav-a{display:block;padding:9px 16px;font-family:Arial,sans-serif;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer;border-left:2px solid transparent;text-decoration:none;transition:all .15s}
+.nav-a:hover,.nav-a.active{color:#fff;border-left-color:#A100FF;background:rgba(161,0,255,.08)}
+.nav-foot{padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-family:Arial,sans-serif;font-size:9px;color:rgba(255,255,255,.25);line-height:1.5}
+/* MAIN */
+#main{margin-left:196px;flex:1;min-width:0}
+/* SECTIONS */
+.sec{padding:52px 44px;border-bottom:1px solid #e5e2dc}
+.sec-tag{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#A100FF;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sec-tag::after{content:'';width:48px;height:1px;background:#e5e2dc}
+.sec-h{font-size:28px;font-weight:400;margin-bottom:6px;line-height:1.2}
+.sec-sub{font-family:Arial,sans-serif;font-size:13px;color:#78716c;margin-bottom:28px;line-height:1.6;max-width:680px}
+/* HERO */
+#hero{background:#1c1917;padding:52px 44px}
+.hero-eye{font-family:Arial,sans-serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:14px}
+.hero-h{font-size:36px;color:#fff;line-height:1.2;margin-bottom:14px;font-weight:400}
+.hero-h em{color:#c84dff;font-style:italic}
+.hero-p{font-family:Arial,sans-serif;font-size:13px;color:rgba(255,255,255,.55);max-width:680px;line-height:1.75;margin-bottom:32px}
+.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.kpi{padding:16px 12px;border-right:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.kpi:last-child{border-right:none}
+.kpi-v{font-size:24px;color:#fff;margin-bottom:3px}
+.kpi-l{font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,.4);margin-bottom:5px;line-height:1.3}
+.kpi-s{font-family:Arial,sans-serif;font-size:9px;color:rgba(255,255,255,.22);line-height:1.3}
+.hero-foot{margin-top:16px;font-family:Arial,sans-serif;font-size:9px;color:rgba(255,255,255,.28);display:flex;align-items:center;gap:12px}
+/* CARD */
+.card{background:#fff;border-radius:12px;border:1px solid #e5e2dc}
+/* TRENDS */
+.trends-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trend-card{background:#fff;border-radius:12px;border:1px solid #e5e2dc;overflow:hidden}
+.trend-head{padding:18px 18px 12px;cursor:pointer}
+.trend-num{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#A100FF;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px}
+.trend-title{font-family:Arial,sans-serif;font-size:13px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.trend-meta{display:flex;gap:7px;flex-wrap:wrap}
+.pill{background:#f0e6ff;color:#A100FF;font-family:Arial,sans-serif;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+.cite{background:#f4f3f0;color:#78716c;font-family:Arial,sans-serif;font-size:9px;padding:3px 8px;border-radius:6px;border:1px solid #e5e2dc}
+.trend-tog{padding:9px 18px;border-top:1px solid #e5e2dc;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:Arial,sans-serif;font-size:11px;color:#78716c;background:#f4f3f0}
+.trend-body{display:none;padding:18px;border-top:1px solid #e5e2dc;background:#f9f8f6}
+.trend-body p{font-family:Arial,sans-serif;font-size:12px;color:#1c1917;line-height:1.75;margin-bottom:10px}
+.imp{border-left:3px solid #A100FF;padding:10px 14px;background:#f0e6ff;border-radius:0 8px 8px 0;margin-top:12px}
+.imp-l{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#A100FF;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.imp p{font-family:Arial,sans-serif;font-size:12px;color:#1c1917;line-height:1.6;margin:0}
+.ris{border-left:3px solid #d95f00;padding:10px 14px;background:#fff8f0;border-radius:0 8px 8px 0;margin-top:8px}
+.ris-l{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#d95f00;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.ris p{font-family:Arial,sans-serif;font-size:12px;color:#1c1917;line-height:1.6;margin:0}
+/* SEGMENTS */
+.seg-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.seg-card{background:#fff;border-radius:12px;border:1px solid #e5e2dc;overflow:hidden}
+.seg-bar-top{height:4px}
+.seg-body{padding:14px}
+.seg-name{font-family:Arial,sans-serif;font-size:11px;font-weight:700;margin-bottom:4px}
+.seg-bud{font-size:20px;font-weight:400;margin-bottom:3px}
+.seg-note{font-family:Arial,sans-serif;font-size:10px;color:#78716c;line-height:1.4}
+/* BAR CHART */
+.bar-row{margin-bottom:10px}
+.bar-lbl{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:11px;color:#1c1917;margin-bottom:3px}
+.bar-lbl span:last-child{font-weight:700}
+.bar-track{height:8px;background:#e5e2dc;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px}
+/* HEATMAP */
+.hm-table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:12px}
+.hm-table th{padding:10px 12px;font-size:10px;font-weight:700;color:#78716c;text-align:left;border-bottom:1px solid #e5e2dc;background:#f4f3f0}
+.hm-table th:not(:first-child){text-align:center}
+.hm-table td{padding:9px 12px;border-bottom:1px solid #e5e2dc}
+.hm-cell{width:44px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin:auto;cursor:default;font-family:Arial,sans-serif}
+/* OPPORTUNITIES */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.fbtn{padding:5px 14px;border-radius:20px;border:1.5px solid #e5e2dc;background:#fff;font-family:Arial,sans-serif;font-size:11px;font-weight:500;color:#78716c;cursor:pointer}
+.fbtn.on{border-color:#A100FF;background:#f0e6ff;color:#A100FF;font-weight:700}
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.opp-card{background:#fff;border-radius:12px;border:1px solid #e5e2dc;overflow:hidden;display:flex;flex-direction:column}
+.opp-top{height:4px}
+.opp-body{padding:16px;flex:1}
+.tag{font-family:Arial,sans-serif;font-size:9px;font-weight:700;padding:2px 7px;border-radius:5px;border:1px solid;letter-spacing:.3px;display:inline-block;margin:0 3px 3px 0}
+.stars{color:#f59e0b;font-size:13px;margin-bottom:6px}
+.opp-title{font-family:Arial,sans-serif;font-size:13px;font-weight:700;line-height:1.4;margin-bottom:5px}
+.opp-why{font-family:Arial,sans-serif;font-size:11px;color:#78716c;line-height:1.5}
+.opp-detail{display:none;padding:12px;border-top:1px solid #e5e2dc;background:#f9f8f6;font-family:Arial,sans-serif;font-size:11px}
+.opp-dl{font-size:9px;font-weight:700;color:#78716c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.opp-dd{font-size:11px;color:#1c1917;line-height:1.5;margin-bottom:8px}
+.deal-box{font-size:17px;color:#A100FF;border:1px dashed #A100FF;border-radius:8px;padding:5px 12px;display:inline-block;margin-top:4px}
+.opp-tog{padding:8px 14px;border-top:1px solid #e5e2dc;cursor:pointer;font-family:Arial,sans-serif;font-size:10px;color:#78716c;background:#f4f3f0;display:flex;justify-content:space-between;margin-top:auto}
+/* PLAYS */
+.play{background:#fff;border-radius:12px;border:1px solid #e5e2dc;overflow:hidden;margin-bottom:12px}
+.play-head{display:flex;cursor:pointer}
+.play-num{width:50px;min-height:68px;display:flex;align-items:center;justify-content:center;background:#A100FF;font-size:24px;color:#fff;flex-shrink:0}
+.play-info{padding:14px 18px;flex:1}
+.play-t{font-family:Arial,sans-serif;font-size:14px;font-weight:700;margin-bottom:4px}
+.play-w{font-family:Arial,sans-serif;font-size:11px;color:#78716c;line-height:1.5}
+.play-body{display:none;border-top:1px solid #e5e2dc}
+.play-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e5e2dc}
+.play-cell{padding:14px;border-right:1px solid #e5e2dc;background:#f9f8f6}
+.play-cell:last-child{border-right:none}
+.play-cl{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#78716c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.play-cv{font-family:Arial,sans-serif;font-size:11px;color:#1c1917;line-height:1.65;white-space:pre-line}
+.play-val{background:#f0e6ff;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}
+.play-vl{font-family:Arial,sans-serif;font-size:10px;color:#A100FF;font-weight:700}
+.play-vv{font-size:17px;color:#b45309}
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:68px 18px 1fr;margin-bottom:4px}
+.tl-yr{font-family:Arial,sans-serif;font-size:10px;font-weight:700;color:#A100FF;padding-top:12px;text-align:right;padding-right:12px}
+.tl-tr{display:flex;flex-direction:column;align-items:center;padding-top:13px}
+.tl-dot{width:9px;height:9px;border-radius:50%;background:#A100FF;flex-shrink:0}
+.tl-ln{flex:1;width:2px;background:#e5e2dc;min-height:20px}
+.tl-con{padding:10px 0 20px 14px}
+.tl-eh{font-family:Arial,sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:2px}
+.tl-es{font-family:Arial,sans-serif;font-size:10px;color:#78716c}
+.tl-ins{display:none;margin-top:8px;background:#A100FF;border-radius:8px;padding:12px 14px}
+.tl-ins p{font-family:Arial,sans-serif;font-size:11px;color:#fff;line-height:1.6;margin:0}
+.tl-ins small{font-family:Arial,sans-serif;font-size:9px;color:rgba(255,255,255,.5);margin-top:4px;display:block}
+/* GTM */
+.gtm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.gtm-card{background:#fff;border-radius:12px;border:1px solid #e5e2dc;overflow:hidden}
+.gtm-head{padding:13px 15px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #e5e2dc}
+.gtm-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.gtm-t{font-family:Arial,sans-serif;font-size:12px;font-weight:700}
+.gtm-bd{padding:12px 14px}
+.gtm-item{font-family:Arial,sans-serif;font-size:11px;color:#1c1917;padding:5px 0;border-bottom:1px solid #e5e2dc;line-height:1.5}
+.gtm-item:last-child{border-bottom:none}
+.gtm-item.amb{color:#b45309}
+/* GANTT */
+.gantt-row{margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.gantt-lbl{font-family:Arial,sans-serif;font-size:10px;color:#1c1917;width:190px;flex-shrink:0;line-height:1.3}
+.gantt-track{flex:1;height:14px;background:#e5e2dc;border-radius:4px;position:relative;overflow:hidden}
+.gantt-bar{position:absolute;height:100%;border-radius:4px;opacity:.85}
+/* SOURCES */
+.tier-leg{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.tier-li{display:flex;align-items:center;gap:6px;font-family:Arial,sans-serif;font-size:11px;color:#78716c}
+.tier-dot{width:9px;height:9px;border-radius:50%}
+.src-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.src-card{background:#fff;border-radius:10px;border:1px solid #e5e2dc;padding:14px}
+.src-tier{font-family:Arial,sans-serif;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;flex-shrink:0}
+.src-t{font-family:Arial,sans-serif;font-size:11px;font-weight:700;line-height:1.4}
+.src-pub{font-family:Arial,sans-serif;font-size:9px;color:#78716c;margin-top:2px;margin-bottom:6px}
+.src-note{font-family:Arial,sans-serif;font-size:10px;color:#44403c;line-height:1.6;margin-bottom:7px}
+.src-url{font-family:Arial,sans-serif;font-size:9px;color:#A100FF;word-break:break-all;text-decoration:none}
+.method{background:#f9f8f6;border:1px solid #e5e2dc;border-radius:10px;padding:18px;margin-top:18px}
+.method h4{font-family:Arial,sans-serif;font-size:12px;font-weight:700;margin-bottom:10px}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.method-grid h5{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#78716c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.method-grid p{font-family:Arial,sans-serif;font-size:11px;color:#44403c;line-height:1.65}
+.amb{color:#b45309}
+.amb-badge{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:#b45309;border:1px dashed #b45309;border-radius:3px;padding:1px 5px;margin-left:5px}
+.footer-note{margin-top:14px;font-family:Arial,sans-serif;font-size:10px;color:#a8a29e;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-top">
+    <div class="nav-label">Accenture Strategy</div>
+    <div class="nav-firm">Public Service</div>
+    <div class="nav-sub">Ohio Social Services<br>Market Intelligence</div>
+  </div>
+  <div class="nav-links">
+    <a class="nav-a active" onclick="goTo('hero')">Market Overview</a>
+    <a class="nav-a" onclick="goTo('trends')">Market Trends</a>
+    <a class="nav-a" onclick="goTo('segments')">Segments</a>
+    <a class="nav-a" onclick="goTo('heatmap')">Challenges</a>
+    <a class="nav-a" onclick="goTo('opportunities')">Opportunities</a>
+    <a class="nav-a" onclick="goTo('plays')">Strategic Plays</a>
+    <a class="nav-a" onclick="goTo('timeline')">Timeline</a>
+    <a class="nav-a" onclick="goTo('gtm')">Go-to-Market</a>
+    <a class="nav-a" onclick="goTo('sources')">Sources</a>
+  </div>
+  <div class="nav-foot">CONFIDENTIAL · Internal Use<br>Verified March 18, 2026</div>
+</nav>
+
+<!-- MAIN -->
+<div id="main">
+
+<!-- HERO -->
+<div id="hero" style="background:#1c1917;padding:52px 44px">
+  <div class="hero-eye">Accenture Strategy &amp; Consulting — Public Service · Ohio Market Intelligence · Procurement Window 2026–2028</div>
+  <h1 class="hero-h">Ohio Social Services:<br><em>A $5.6B Modernisation</em> Opportunity<br>in Human Services Technology</h1>
+  <p class="hero-p">Ohio's FY2026–27 budget allocates $5.64B to ODJFS across five high-priority segments—Eligibility Systems, Workforce &amp; Employment, Child Welfare, Pensions, and Data &amp; AI—with multiple legacy modernisation mandates and greenfield agency stand-ups creating an active consulting market through 2028.</p>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-v">$5.64B</div><div class="kpi-l">ODJFS Biennium Budget FY26–27</div><div class="kpi-s">LSC HB 96 · Jul 2025</div></div>
+    <div class="kpi"><div class="kpi-v">$83.3M</div><div class="kpi-l">Buckeye UI Contract Awarded</div><div class="kpi-s">ODJFS Press Release · Dec 2024</div></div>
+    <div class="kpi"><div class="kpi-v">1.4M</div><div class="kpi-l">Ohioans on SNAP Benefits</div><div class="kpi-s">ODJFS Caseload · Nov 2025</div></div>
+    <div class="kpi"><div class="kpi-v">100+</div><div class="kpi-l">AI Use Cases Approved by Ohio AI Council</div><div class="kpi-s">NASCIO/InnovateOhio · Sep 2025</div></div>
+    <div class="kpi"><div class="kpi-v">$117.5B</div><div class="kpi-l">OPERS Total Pension Assets</div><div class="kpi-s">OPERS ACFR · Dec 2024</div></div>
+    <div class="kpi"><div class="kpi-v">83%</div><div class="kpi-l">OPERS Funded Ratio (15-yr amort.)</div><div class="kpi-s">OPERS Actuarial · Dec 2024</div></div>
+  </div>
+  <div class="hero-foot">
+    <span style="border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:3px 10px;display:inline-flex;align-items:center;gap:5px"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80;display:inline-block"></span>Data verified March 18, 2026</span>
+    <span>· Assumptions labelled [ASSUMPTION] in amber where estimated</span>
+  </div>
+</div>
+
+<!-- TRENDS -->
+<div id="trends" class="sec">
+  <div class="sec-tag">Section 02</div>
+  <h2 class="sec-h">8 Market Trends Driving Demand</h2>
+  <p class="sec-sub">Every trend anchored to a primary government, audit, or research source. Click any card to expand detail and consulting implication.</p>
+  <div class="trends-grid" id="trends-container"></div>
+</div>
+
+<!-- SEGMENTS -->
+<div id="segments" class="sec">
+  <div class="sec-tag">Section 03</div>
+  <h2 class="sec-h">Market Segments</h2>
+  <p class="sec-sub">Four primary segments plus cross-cutting Data &amp; AI, each with distinct budget anchors, buyers, and consulting demand profiles.</p>
+  <div class="seg-cards">
+    <div class="seg-card"><div class="seg-bar-top" style="background:#A100FF"></div><div class="seg-body"><div class="seg-name">Eligibility Systems</div><div class="seg-bud">$2.1B+</div><div class="seg-note">SNAP/OWF administration, Ohio Benefits migration, Medicaid eligibility · LSC HB 96, Jul 2025</div></div></div>
+    <div class="seg-card"><div class="seg-bar-top" style="background:#0891b2"></div><div class="seg-body"><div class="seg-name">Workforce &amp; Employment</div><div class="seg-bud">$100M+</div><div class="seg-note">Annual federal WIOA funding + Buckeye UI $83.3M · DOL/ODJFS, 2025</div></div></div>
+    <div class="seg-card"><div class="seg-bar-top" style="background:#d97706"></div><div class="seg-body"><div class="seg-name">Child Welfare</div><div class="seg-bud">$946.5M</div><div class="seg-note">DCY FY2027 appropriation — foster care, child care, family services · LSC DCY Greenbook, Jul 2025</div></div></div>
+    <div class="seg-card"><div class="seg-bar-top" style="background:#2e7d32"></div><div class="seg-body"><div class="seg-name">Pensions</div><div class="seg-bud">$117.5B</div><div class="seg-note">OPERS total system assets · OPERS ACFR, Dec 2024</div></div></div>
+  </div>
+  <div class="card" style="padding:20px 22px">
+    <div style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;margin-bottom:4px">Key programme budget anchors — FY2026</div>
+    <div style="font-family:Arial,sans-serif;font-size:10px;color:#78716c;margin-bottom:16px">Sources: LSC HB 96 (Jul 2025), OPERS ACFR (Dec 2024), ODJFS/DOL 2025</div>
+    <div id="seg-bars"></div>
+  </div>
+</div>
+
+<!-- HEATMAP -->
+<div id="heatmap" class="sec">
+  <div class="sec-tag">Section 04</div>
+  <h2 class="sec-h">Challenges Heatmap</h2>
+  <p class="sec-sub">Scoring 1–4 across severity, urgency, Accenture fit, and addressable scale. Hover score cells for source-backed tooltips.</p>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:5px;font-family:Arial,sans-serif;font-size:10px;color:#78716c"><span style="width:13px;height:13px;border-radius:3px;background:#d1fae5;display:inline-block"></span>1 — Low</div>
+    <div style="display:flex;align-items:center;gap:5px;font-family:Arial,sans-serif;font-size:10px;color:#78716c"><span style="width:13px;height:13px;border-radius:3px;background:#fef3c7;display:inline-block"></span>2 — Medium</div>
+    <div style="display:flex;align-items:center;gap:5px;font-family:Arial,sans-serif;font-size:10px;color:#78716c"><span style="width:13px;height:13px;border-radius:3px;background:#ffe8d1;display:inline-block"></span>3 — High</div>
+    <div style="display:flex;align-items:center;gap:5px;font-family:Arial,sans-serif;font-size:10px;color:#78716c"><span style="width:13px;height:13px;border-radius:3px;background:#f0e6ff;display:inline-block"></span>4 — Critical</div>
+  </div>
+  <div class="card" style="overflow:hidden"><table class="hm-table" id="hm-table"></table></div>
+</div>
+
+<!-- OPPORTUNITIES -->
+<div id="opportunities" class="sec">
+  <div class="sec-tag">Section 05</div>
+  <h2 class="sec-h">Opportunity Portfolio</h2>
+  <p class="sec-sub">9 prioritised consulting opportunities across the 2026–2028 window. Filter by practice domain. Deal values are <span class="amb">estimates [ASSUMPTION]</span>.</p>
+  <div class="filter-bar" id="opp-filters"></div>
+  <div class="opp-grid" id="opp-grid"></div>
+</div>
+
+<!-- PLAYS -->
+<div id="plays" class="sec">
+  <div class="sec-tag">Section 06</div>
+  <h2 class="sec-h">Top 5 Strategic Plays</h2>
+  <p class="sec-sub">Highest-priority go-to-market moves for Accenture in Ohio Social Services over the 2026–2028 window.</p>
+  <div id="plays-list"></div>
+</div>
+
+<!-- TIMELINE -->
+<div id="timeline" class="sec">
+  <div class="sec-tag">Section 07</div>
+  <h2 class="sec-h">Policy &amp; Procurement Timeline</h2>
+  <p class="sec-sub">Key dates, mandates, and procurement windows through 2028. Click events to reveal strategic insight.</p>
+  <div id="tl-container"></div>
+</div>
+
+<!-- GTM -->
+<div id="gtm" class="sec">
+  <div class="sec-tag">Section 08</div>
+  <h2 class="sec-h">Go-to-Market</h2>
+  <p class="sec-sub">Target accounts, entry points, partners, risks, revenue sizing, and 36-month execution roadmap.</p>
+  <div class="gtm-grid" id="gtm-grid"></div>
+  <div class="card" style="padding:20px 22px">
+    <div style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;margin-bottom:3px">36-month engagement roadmap <span class="amb-badge">ASSUMPTION</span></div>
+    <div style="font-family:Arial,sans-serif;font-size:10px;color:#78716c;margin-bottom:16px">Accenture strategic planning estimate · March 2026</div>
+    <div id="gantt"></div>
+    <div style="display:flex;justify-content:space-between;padding-left:198px;font-family:Arial,sans-serif;font-size:9px;color:#78716c;margin-top:6px">
+      <span>Q1 2026</span><span>Q3 2026</span><span>Q1 2027</span><span>Q3 2027</span><span>Q1 2028</span><span>Q3 2028</span>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div id="sources" class="sec">
+  <div class="sec-tag">Section 09</div>
+  <h2 class="sec-h">Sources Registry</h2>
+  <p class="sec-sub">All 10 verified sources. Every KPI in this dashboard traces to a named source below.</p>
+  <div class="tier-leg">
+    <div class="tier-li"><span class="tier-dot" style="background:#2e7d32"></span>Tier 1 — Primary (Government/Official)</div>
+    <div class="tier-li"><span class="tier-dot" style="background:#0891b2"></span>Tier 2 — Secondary (Research/Policy)</div>
+  </div>
+  <div class="src-grid" id="src-grid"></div>
+  <div class="method">
+    <h4>Methodology Note</h4>
+    <div class="method-grid">
+      <div><h5>Facts</h5><p>Numbers drawn directly from Tier 1 primary government documents (LSC budget bills, ODJFS press releases, Ohio Auditor of State, OPERS ACFR, DOL Federal Register). Cited with source name and date throughout.</p></div>
+      <div><h5>Analysis</h5><p>Consulting implications, segment demand scoring, opportunity prioritisation, and strategic plays represent Accenture analytical judgment applied to primary source data. Labelled as "Accenture analysis."</p></div>
+      <div><h5 class="amb">Assumptions</h5><p>Deal value estimates, revenue sizing, and market sizing where no primary data exists are labelled <span class="amb">[ASSUMPTION]</span> in amber. These require validation before client presentation.</p></div>
+    </div>
+  </div>
+  <div class="footer-note">Accenture Strategy — Ohio Social Services Market Intelligence · Procurement Window 2026–2028 · Sources verified March 18, 2026</div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function goTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.nav-a').forEach(a=>a.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ── DATA ──────────────────────────────────────────────────
+var TRENDS=[
+  {n:'01',stat:'$5.64B biennium',src:'LSC HB 96 · Jul 2025',title:'$5.64B ODJFS budget with mandated Ohio Benefits portal transfer creates immediate integration demand',p1:'Ohio\'s enacted FY2026–27 budget (HB 96, 136th General Assembly) appropriates $5.64 billion to ODJFS—over $2B in FY2026 alone. Federal funds constitute 68.5% of the ODJFS budget, creating leverage points tied to federal compliance timelines.',p2:'A structural consolidation is underway: Ohio Benefits—the statewide eligibility portal serving 1.4 million SNAP recipients—transfers from DAS to ODJFS in FY2026. The Community Services Block Grant simultaneously moves from Dept of Development to ODJFS.',p3:'The new Department of Children and Youth (DCY) is operating as an independent agency for the first full biennium, receiving approximately $946.5M in FY2027—a complete organisational stand-up with procurement, data, and IT needs.',acn:'The Ohio Benefits migration and DCY stand-up create near-term demand for programme integration architecture, change management, and eligibility system modernisation—core Accenture Public Service capabilities with direct federal co-funding.',risk:'Competitors with existing ODJFS relationships (Deloitte, Maximus, ICF) will capture integration work in Q3–Q4 2026. Late entry forfeits 2–3 year implementation contracts.'},
+  {n:'02',stat:'$83.3M contract',src:'ODJFS Press Release · Dec 2024',title:'$83.3M Buckeye UI cloud system launches 2026—adjacent analytics and change management work is open',p1:'ODJFS awarded Geographic Solutions Inc. (GUS 23) an $83.3M contract in December 2024 to replace Ohio\'s 20-year-old unemployment benefits and appeals legacy system. Buckeye UI is expected operational by late 2026, with ~$34M in the first three years.',p2:'A 2024 American Institutes for Research study identified key barriers: inaccessible plain-language communications, difficulty reaching UI staff, and online lockouts affecting 24% of surveyed claimants—all addressable through the new system.',p3:'The Technology and Customer Service Fee—0.15% of wages per covered employee—funds the project from January 2026 through December 2027, creating a defined, employer-funded revenue stream for the modernisation.',acn:'Adjacent work includes change management, employer/claimant training, system integration with Ohio Benefits and SNAP, data migration QA, and post-launch fraud analytics—an estimated $8–14M subcontracting opportunity.',risk:'The prime is already awarded to Geographic Solutions. Failure to engage as a subcontractor or systems integrator by Q2 2026 closes the window for the initial implementation phase.'},
+  {n:'03',stat:'100+ AI use cases',src:'NASCIO/InnovateOhio · Sep 2025',title:'100+ AI use cases approved by Ohio AI Council with 33 in production—scale-up phase is now',p1:'Ohio\'s AI Council has approved over 100 use cases across state agencies, with 33 in production, 6 under development, and 15 in proof-of-concept as of mid-2025. AI ranks second in NASCIO\'s 2025 State CIO Top 10 Priorities nationally.',p2:'Live social services deployments include an Ohio Benefits chatbot for self-service account recovery, a RegExplorer AI tool for regulatory landscape analysis, and a family of RPA bots improving efficiency across benefit programmes.',p3:'HB 96 mandates all public schools adopt an AI policy by July 1, 2026. Ohio has hosted AI workshops with Microsoft, AWS, UiPath, and Salesforce—signalling active vendor ecosystem engagement at the state level.',acn:'Accenture\'s Responsible AI and Applied Intelligence practice is positioned to accelerate scale-up from 33 to 100+ production use cases and provide governance frameworks for high-risk child welfare and eligibility AI applications.',risk:'AWS, Microsoft, and Deloitte are already embedded via Ohio\'s vendor workshops. Without a presence in Ohio\'s AI governance work, Accenture risks exclusion from the state\'s AI Centre of Excellence formation.'},
+  {n:'04',stat:'19 findings · $924K',src:'Ohio Auditor of State · FY2024',title:'19 federal compliance findings across 7 Ohio agencies in FY2024 signal sustained remediation demand',p1:'The 2024 State of Ohio Single Audit identified 19 findings and $924,725 in questioned costs across seven agencies administering $44B in federal programmes. $30.7B came from HHS, with $26.6B to Medicaid.',p2:'HB 96 mandates that by October 1, 2025, ODJFS and each county JFS must grant Joint Medicaid Oversight Committee (JMOC) staff access to all eligibility, billing, payment, and provider tracking systems—a significant new compliance reporting infrastructure requirement.',p3:'The ODJFS Public Interest Audit (2023) found no centralised cross-programme data tracking at OhioMeansJobs centres, preventing financial-to-performance matching and limiting compliance with state law on vendor data reporting.',acn:'Compliance remediation, internal control design, data quality improvement for JMOC reporting, and programme integrity analytics represent recurring advisory work streams—a joint entry point for Accenture\'s Risk & Compliance and Data & AI practices.',risk:'Failure to establish a compliance advisory presence allows audit firms (KPMG, Deloitte, Grant Thornton) to dominate recurring remediation engagements across ODJFS, ODM, and county JFS agencies.'},
+  {n:'05',stat:'$2.919B WIOA (national)',src:'DOL Federal Register · May 2025',title:'$2.919B in FY2026 WIOA state grants plus Workforce Pell launching July 1, 2026 reshape Ohio\'s workforce system',p1:'The enacted FY2026 Consolidated Appropriations Act maintains WIOA State Grants at $2.919B nationally, rejecting the proposed block-grant consolidation. Ohio receives $100M+ annually through 22 OhioMeansJobs centres and 68 affiliate sites.',p2:'Short-term Pell Grant eligibility (Workforce Pell) goes live July 1, 2026—requiring OhioMeansJobs centres to update eligibility guidance workflows, integrate new data reporting requirements, and align with Education Department quality standards.',p3:'Ohio\'s PY2024 WIOA performance enrolled 5,303 workers in the RETAIN grant—exceeding projections of 4,500 and outperforming all other participating states—but data validation identified gaps in the ARIES reporting system.',acn:'Workforce Pell system implementation, ARIES data modernisation, OhioMeansJobs centre performance analytics, and CCMEP technology upgrades represent a multi-year advisory and implementation mandate for Accenture\'s Workforce & Education practice.',risk:'WIOA reauthorisation remains unresolved as of March 2026. Firms without existing workforce system credentials in Ohio will be disadvantaged in RFP responses.'},
+  {n:'06',stat:'$117.5B AUM · 83% funded',src:'OPERS ACFR · Dec 2024',title:'OPERS 83% funded with $117.5B assets—WEP/GPO Social Security reform creates pension system demand',p1:'OPERS manages $117.5B in system assets and achieved a 9.08% total fund return in 2024. The system is 83% funded with a 15-year unfunded liability amortisation window. STRS Ohio is separately at 82.8%, with a 10.1-year amortisation period.',p2:'The SSA began implementing the WEP/GPO repeal on February 25, 2025, triggering retroactive benefit payments and monthly benefit increases for Ohio public employees—creating a high-volume benefit recalculation and member communication challenge for OPERS and STRS Ohio.',p3:'STRS Ohio approved benefit improvements in FY2025 including a 1.5% COLA and reduced service requirements—changes requiring actuarial modelling, member portal updates, and benefit projection tool upgrades.',acn:'WEP/GPO retroactive recalculation support, benefit administration system upgrades, member-facing digital portals, and actuarial analytics modernisation represent discrete advisory and technology projects for Accenture\'s Finance Transformation practice.',risk:'The WEP/GPO implementation window is narrow (2025–2026). Actuarial advisory firms (Milliman, Cheiron) will capture system recalculation work without Accenture\'s involvement in broader digital transformation.'},
+  {n:'07',stat:'~69,000 OWF recipients',src:'ODJFS Caseload · Nov 2025',title:'69,000 Ohioans on cash assistance—TANF co-funding of 5,588 WIOA participants signals benefit-to-work data gap',p1:'As of November 2024, approximately 69,000 Ohioans received Ohio Works First cash assistance—about 62,000 children and 7,000 adults. TANF co-funded 5,588 WIOA participants in PY2024, up from 5,317 in PY2023.',p2:'The ODJFS Public Interest Audit found no centralised cross-programme data tracking at OhioMeansJobs centres, limiting evidence of benefit-to-work transition effectiveness and creating federal TANF Work Participation Rate compliance risk.',p3:'In late 2025, a federal shutdown disrupted SNAP payments, prompting Governor DeWine to deploy $25M in TANF funds as a substitute—exposing Ohio\'s systemic dependency on federal SNAP infrastructure and lack of eligibility system redundancy.',acn:'Integrated benefits-to-work analytics, TANF-WIOA data sharing architecture, and outcome-based programme dashboards represent a multi-agency consulting opportunity bridging ODJFS, DCY, and the Governor\'s Executive Workforce Board.',risk:'Federal pressure to demonstrate TANF work participation rates is intensifying. States with poor data infrastructure face federal penalties—creating an urgent, mandate-driven advisory opportunity with a hard deadline.'},
+  {n:'08',stat:'$946.5M FY2027',src:'LSC DCY Greenbook · Jul 2025',title:'Ohio\'s new Dept of Children & Youth ($946M) is a greenfield IT and organisational design opportunity',p1:'Ohio\'s Department of Children and Youth (DCY) is operating as a standalone agency for its first full biennium in FY2026–27, receiving approximately $946.5M in FY2027. DCY administers the new $100M/yr Child Care Choice Voucher Programme, foster care, adoption, and child welfare services.',p2:'HB 96 requires DCY to establish PFCC payment categories by December 31, 2025, calculate payments based on child enrolment from July 5, 2026, and launch the Child Care Choice Voucher Programme by November 1, 2026—all requiring new IT infrastructure.',p3:'No public DCY IT strategic plan exists as of March 2026. The child welfare sector nationally faces growing AI governance pressure, with documented failures in algorithmic risk assessment tools creating demand for responsible AI advisory work.',acn:'DCY represents a rare greenfield agency IT opportunity: enterprise architecture, case management system selection, AI governance framework, and workforce planning for a $946M agency with no legacy consulting relationships.',risk:'Firms that file FOIAs now and engage DCY procurement staff in Q2 2026 will be on the bidders\' list. Late entrants will be locked out of initial procurements with November 2026 deadlines.'}
+];
+
+var OPPS=[
+  {title:'Ohio Benefits System Integration Architecture',domain:'Technology',seg:'Eligibility',sc:'#A100FF',stars:5,why:'Mandatory transfer of Ohio Benefits portal from DAS to ODJFS in FY2026 requires integration with SNAP, Medicaid, TANF, and new ODJFS data infrastructure.',buyer:'ODJFS CIO / Director',angle:'Data architecture and API integration layer for cross-agency benefits eligibility',risks:'DAS incumbent relationships; potential single-vendor mandate',deal:'$12–22M'},
+  {title:'Buckeye UI Change Management & Analytics',domain:'Change Management',seg:'Workforce',sc:'#0891b2',stars:4,why:'$83.3M Buckeye UI cloud launch in late 2026 requires employer/claimant change management, training, and post-launch fraud analytics layer.',buyer:'ODJFS Deputy Director, Unemployment',angle:'Subcontract or advisory alongside Geographic Solutions prime; analytics overlay',risks:'Prime vendor controls scope; limited subcontract visibility',deal:'$8–14M'},
+  {title:'DCY IT Strategic Plan & Case Management',domain:'Technology',seg:'Child Welfare',sc:'#d97706',stars:5,why:'DCY is a greenfield agency with no public IT roadmap, operating under HB 96 payment system deadlines in 2025–2026.',buyer:'DCY Director / CIO',angle:'Enterprise architecture, case management system selection, and implementation roadmap',risks:'No relationship yet; FOIA required to scope opportunity',deal:'$15–30M'},
+  {title:'Ohio AI Council Scale-Up & Governance',domain:'Data & AI',seg:'Eligibility',sc:'#A100FF',stars:4,why:'100+ approved AI use cases with only 33 in production. Ohio AI Council needs responsible AI governance for high-risk human services applications.',buyer:'Ohio CIO Katrina Flory / DAS',angle:'Responsible AI framework, use case industrialisation, and human-services AI guardrails',risks:'AWS/Microsoft/Deloitte already embedded via state workshops',deal:'$10–20M'},
+  {title:'WIOA Performance & Workforce Pell Readiness',domain:'Analytics',seg:'Workforce',sc:'#0891b2',stars:3,why:'Workforce Pell launches July 1, 2026. ARIES data system has documented gaps. OhioMeansJobs centres need outcome analytics and eligibility guidance updates.',buyer:'ODJFS Office of Workforce Development',angle:'Programme performance dashboards, ARIES data modernisation, Pell readiness advisory',risks:'Complex multi-agency stakeholder environment',deal:'$5–12M'},
+  {title:'ODJFS Compliance & JMOC Data Infrastructure',domain:'Risk & Compliance',seg:'Eligibility',sc:'#A100FF',stars:3,why:'HB 96 mandates ODJFS grants JMOC access to all eligibility/billing/payment systems. 19 audit findings in FY2024 Single Audit.',buyer:'ODJFS CFO / Director',angle:'JMOC reporting data infrastructure, compliance control design, internal audit co-sourcing',risks:'Low fee potential but strong relationship-building entry point',deal:'$4–10M'},
+  {title:'OPERS/STRS WEP-GPO Benefit Recalculation',domain:'Finance Transformation',seg:'Pensions',sc:'#2e7d32',stars:3,why:'SSA began WEP/GPO repeal implementation Feb 25, 2025. OPERS and STRS Ohio need retroactive benefit recalculation systems and member-facing portals.',buyer:'OPERS Executive Director / STRS Board',angle:'Benefit recalculation architecture, member communication platform, actuarial data integration',risks:'Cheiron (STRS actuary) and OPERS internal staff control actuarial work',deal:'$5–12M'},
+  {title:'Ohio Benefits Portal UX & Digital Access',domain:'Digital Experience',seg:'Eligibility',sc:'#A100FF',stars:4,why:'24% of surveyed UI claimants reported major problems; 1 in 4 were locked out. Ohio Benefits migration to ODJFS creates a UX redesign mandate.',buyer:'ODJFS Director / InnovateOhio Platform Admin',angle:'Human-centred design and plain-language content strategy for benefits portal and UC system',risks:'Geographic Solutions holds UI UX scope in Buckeye UI; overlap risk',deal:'$3–8M'},
+  {title:'DCY Child Care Voucher Programme Launch',domain:'Implementation',seg:'Child Welfare',sc:'#d97706',stars:4,why:'HB 96 establishes ~$100M/yr Child Care Choice Voucher Programme at DCY. Launch deadline: November 1, 2026.',buyer:'DCY Director',angle:'Voucher payment platform design, provider portal, and programme launch management',risks:'Tight deadline (Nov 2026); risk of incumbent relationships at county JFS level',deal:'$6–15M'}
+];
+
+var PLAYS=[
+  {n:'01',title:'Establish DCY as Accenture\'s anchor account in Ohio social services',why:'Greenfield agency, ~$946M budget, no IT roadmap, multiple HB 96 deadlines in 2025–2026. First mover wins the technology foundation contract.',steps:'→ File ORC §149.43 FOIA for DCY IT roadmap (immediate)\n→ Engage DCY Director via Governor\'s Office connection\n→ Submit unsolicited architecture white paper by Q2 2026\n→ Position for RFP Q3 2026',buyers:'DCY Director, DCY CIO (not yet named), ODJFS Director (transitional authority)',assets:'Child welfare IT credentials, HHS delivery accelerators, federal child welfare experience',risks:'No relationship yet; politically sensitive; potential sole-source limitations',val:'$15–30M over 3 years [ASSUMPTION]'},
+  {n:'02',title:'Position as the analytics & governance layer for Buckeye UI',why:'$83.3M UI modernisation already awarded. Accenture\'s window is the analytics, change management, and fraud prevention layer that Geographic Solutions will not own.',steps:'→ Map subcontract scope in GUS 23 SOW\n→ Approach Geographic Solutions for partnership agreement\n→ Submit capability brief to ODJFS Deputy Director (Unemployment)\n→ Propose analytics-as-a-service overlay before system go-live',buyers:'ODJFS Deputy Director (Unemployment), ODJFS CIO, Geographic Solutions Inc.',assets:'Fraud analytics accelerators, change management methodology, UI programme knowledge',risks:'Geographic Solutions may self-perform; limited RFP transparency on subcontract requirements',val:'$8–14M over 2 years [ASSUMPTION]'},
+  {n:'03',title:'Win Ohio AI Council scale-up advisory before state issues RFP',why:'33 AI use cases in production, 67+ in pipeline. Ohio AI Council needs responsible AI governance for high-risk social services applications—no formal RFP yet issued.',steps:'→ Submit to NASCIO/InnovateOhio AI showcase 2026\n→ Engage Ohio State CIO Katrina Flory directly\n→ Publish thought leadership on child welfare AI governance\n→ Position for AI Centre of Excellence RFP',buyers:'Ohio CIO Katrina Flory, DAS InnovateOhio Administrator',assets:'Responsible AI practice, Applied Intelligence, Accenture AI governance frameworks',risks:'AWS, Microsoft, Deloitte already embedded; late entry disadvantaged',val:'$10–20M over 3 years [ASSUMPTION]'},
+  {n:'04',title:'Capture Ohio Benefits integration work during ODJFS transition',why:'Ohio Benefits migrates from DAS to ODJFS in FY2026. No integration architecture publicly defined. Highest-value near-term eligibility systems opportunity.',steps:'→ Brief ODJFS CIO on integration risks by Q1 2026\n→ Prepare Ohio Benefits migration architecture white paper\n→ Position for sole-source or competitive RFP Q1–Q2 2026\n→ Leverage any existing DAS or ODJFS contact',buyers:'ODJFS CIO, ODJFS Director Matt Damschroder, DAS OIT',assets:'Oracle integration experience, benefits eligibility system accelerators, federal SNAP co-funding knowledge',risks:'DAS may handle internally via existing vendor; window is narrow (FY2026 mandate)',val:'$12–22M over 2 years [ASSUMPTION]'},
+  {n:'05',title:'Build a WIOA/workforce pipeline via OhioMeansJobs analytics',why:'$100M+ annual federal workforce investment with documented data tracking gaps. Workforce Pell (July 2026) creates a compliance and analytics mandate with a hard launch date.',steps:'→ Engage ODJFS OWD with ARIES gap analysis document\n→ Propose Workforce Pell readiness advisory (March–June 2026)\n→ Develop WIOA outcome dashboard prototype\n→ Target PY2026 procurement cycle',buyers:'ODJFS OWD Director, Governor\'s Executive Workforce Board, Local Workforce Development Boards',assets:'WIOA programme expertise, workforce analytics accelerators, Accenture Change Management',risks:'WIOA reauthorisation uncertainty; complex multi-agency political environment',val:'$5–12M over 2 years [ASSUMPTION]'}
+];
+
+var TIMELINE=[
+  {yr:'2025',ev:'Ohio Benefits transferred to ODJFS',sub:'FY2026 mandate per HB 96',ins:'Critical window: Ohio Benefits migration requires integration architecture design in H1 2026. Accenture must engage ODJFS CIO immediately.',src:'LSC HB 96 · Jul 2025'},
+  {yr:'2025',ev:'DCY payment categories established',sub:'Deadline: Dec 31, 2025 per HB 96',ins:'DCY must establish PFCC payment categories. Systems are not yet in place. Advisory engagement window opens immediately.',src:'LSC DCY Greenbook · Jul 2025'},
+  {yr:'2026',ev:'Buckeye UI expected operational',sub:'Target: Late 2026 (Geographic Solutions)',ins:'Analytics overlay and change management subcontract work should be scoped and under contract before system go-live.',src:'ODJFS Press Release · Dec 2024'},
+  {yr:'2026',ev:'Workforce Pell Grant launches',sub:'July 1, 2026 (ED rulemaking complete)',ins:'OhioMeansJobs centres must update eligibility guidance and data reporting for Pell-eligible short-term programmes. Readiness advisory is a clear entry point.',src:'DOL Federal Register · May 2025'},
+  {yr:'2026',ev:'Child Care Choice Voucher Programme launches',sub:'Deadline: Nov 1, 2026 per HB 96',ins:'DCY must stand up a $100M/yr voucher programme by November 2026. No vendor yet announced. Single highest-urgency new procurement.',src:'LSC DCY Greenbook · Jul 2025'},
+  {yr:'2026',ev:'Ohio AI policy required for all schools',sub:'Deadline: July 1, 2026',ins:'Downstream AI governance demand across Ohio public sector including social services. Position AI governance advisory before the deadline.',src:'NASCIO/InnovateOhio · Sep 2025'},
+  {yr:'2027',ev:'ODJFS Community Services Block Grant takes effect',sub:'FY2027 transfer from Dept of Development',ins:'CSBG transfer adds ~$150M in federal pass-through to ODJFS, creating a second wave of integration and programme management work.',src:'LSC HB 96 · Jul 2025'},
+  {yr:'2028',ev:'WIOA PY2026–27 cycle close & reauthorisation',sub:'WIOA reauthorisation status TBD',ins:'WIOA reauthorisation may introduce new compliance and system requirements. Position as Ohio\'s WIOA advisory partner before the next cycle.',src:'WIOA Reauth Update · Feb 2026'}
+];
+
+var SOURCES=[
+  {t:1,type:'Budget',title:'Ohio HB 96 — FY2026–27 Main Operating Appropriations Bill',pub:'Ohio Legislative Service Commission, 136th GA',date:'Jul 2025',note:'Enacted state budget. ODJFS biennium: $5.64B. Ohio Benefits transfer mandate. DCY $946.5M FY2027.',url:'https://www.lsc.ohio.gov/assets/legislation/136/hb96/en0/files/hb96-budget-in-brief-as-enacted-136th-general-assembly.pdf'},
+  {t:2,type:'Policy',title:'Shifting Support: State Budget Changes Impacting Ohio\'s HHS Agencies',pub:'Community Solutions',date:'Aug 2025',note:'DBH $1.23B FY2026; ODA –24.7% YoY; Ohio Benefits transfer mandate analysis.',url:'https://www.communitysolutions.com/resources/shifting-support-state-budget-changes-impacting-ohios-hhs-agencies'},
+  {t:1,type:'RFP / Contract',title:'ODJFS: Vendor Selected to Modernise Unemployment Benefits System (Buckeye UI)',pub:'Ohio Dept of Job and Family Services',date:'Dec 2024',note:'$83.3M to Geographic Solutions Inc. ~$34M in first 3 years. Operational late 2026.',url:'https://content.govdelivery.com/accounts/OHDJFS/bulletins/3ca066d'},
+  {t:1,type:'Technology',title:'Ohio\'s Blueprint for Empowering Statewide AI Innovation (NASCIO Spotlight)',pub:'NASCIO / InnovateOhio / Ohio DAS',date:'Sep 2025',note:'100+ AI use cases approved; 33 in production; 15 in POC. AI = #2 NASCIO priority 2025.',url:'https://www.nascio.org/wp-content/uploads/2025/09/OH_Artificial-Intelligence.pdf'},
+  {t:1,type:'Audit',title:'2024 State of Ohio Single Audit — Federal Program Findings',pub:'Ohio Auditor of State (Keith Faber)',date:'Early 2025',note:'19 findings, $924,725 questioned costs, 7 agencies, $44B federal spend audited.',url:'https://ohioauditor.gov/news/pressreleases/Details/7567'},
+  {t:2,type:'Performance Audit',title:'ODJFS Public Interest Audit — Workforce Development / OhioMeansJobs',pub:'Ohio Auditor of State — Ohio Performance Team',date:'Feb 2023',note:'9 recommendations. $100M+ annual federal workforce funding. No centralised programme performance tracking.',url:'https://ohioauditor.gov/performance/ODJFS-2023.html'},
+  {t:1,type:'Caseload Data',title:'Ohio ODJFS Caseload Summary Statistics — November 2025',pub:'Ohio Dept of Job and Family Services',date:'Nov 2025',note:'1.4M Ohioans on SNAP; ~69,000 OWF recipients (62,000 children); avg SNAP benefit ~$190/month.',url:'https://dam.assets.ohio.gov/image/upload/v1769447796/jfs.ohio.gov/PRC/CaseloadSummaryReportNovember2025.pdf'},
+  {t:1,type:'Federal Funding',title:'PY2025 WIOA Title I Allotments — Federal Register Notice',pub:'U.S. Dept of Labor, ETA',date:'May 2025',note:'WIOA Youth PY2025: $948.1M national. State Grants FY2026: $2.919B. Workforce Pell live Jul 1 2026.',url:'https://www.federalregister.gov/documents/2025/05/19/2025-08879/program-year-py-2025-workforce-innovation-and-opportunity-act-wioa-title-i-allotments-py-2025-title'},
+  {t:1,type:'Workforce Data',title:'Ohio WIOA Annual Performance Narrative — Program Year 2024',pub:'Ohio ODJFS / U.S. Dept of Labor ETA',date:'Aug 2025',note:'5,303 RETAIN enrolees (exceeded 4,500 target); 982 employers; 5,588 TANF-WIOA co-funded participants.',url:'https://dam.assets.ohio.gov/image/upload/v1764957643/jfs.ohio.gov/owd/WIOA/docs/WIOAAnnualNarrativeReportPY2024.pdf'},
+  {t:1,type:'Pension / Financial',title:'OPERS 2024 Annual Comprehensive Financial Report & Actuarial Valuation',pub:'Ohio Public Employees Retirement System',date:'Mar 2025',note:'$117.5B assets; 83% funded; 9.08% 2024 return; 15-yr UAAL amortisation; $3.04 returned per employer dollar.',url:'https://perspective.opers.org/opers-releases-financial-reports-4/'}
+];
+
+var HM=[
+  {a:'Legacy IT Modernisation (UI/Benefits)',s:4,u:4,f:4,sc:'$50M+',src:'ODJFS Press Release Dec 2024'},
+  {a:'Ohio Benefits Integration (DAS→ODJFS)',s:4,u:4,f:4,sc:'$20–35M',src:'LSC HB 96 Jul 2025'},
+  {a:'Compliance & Programme Integrity',s:3,u:3,f:3,sc:'$10–20M',src:'Ohio Auditor Single Audit 2024'},
+  {a:'Workforce Data & Analytics (WIOA/ARIES)',s:3,u:3,f:4,sc:'$5–15M',src:'ODJFS Workforce Audit Feb 2023'},
+  {a:'Child Welfare IT (DCY Greenfield)',s:4,u:3,f:3,sc:'$15–30M',src:'LSC DCY Greenbook Jul 2025'},
+  {a:'AI Governance & Scale-Up',s:3,u:4,f:4,sc:'$10–20M',src:'NASCIO/InnovateOhio Sep 2025'},
+  {a:'Pension Administration (OPERS/STRS)',s:2,u:3,f:3,sc:'$5–12M',src:'OPERS ACFR Dec 2024'},
+  {a:'Workforce Pell System Readiness',s:2,u:4,f:3,sc:'$3–8M',src:'DOL Federal Register May 2025'}
+];
+
+function hmBg(v){return['','#d1fae5','#fef3c7','#ffe8d1','#f0e6ff'][v]}
+function hmFg(v){return['','#065f46','#92400e','#d95f00','#6d00c4'][v]}
+function hmLbl(v){return['','Low','Medium','High','Critical'][v]}
+
+// ── BUILD TRENDS ──────────────────────────────────────────
+var tc=document.getElementById('trends-container');
+TRENDS.forEach(function(t,i){
+  tc.innerHTML+='<div class="trend-card"><div class="trend-head" onclick="togTrend('+i+')"><div class="trend-num">Trend '+t.n+'</div><div class="trend-title">'+t.title+'</div><div class="trend-meta"><span class="pill">'+t.stat+'</span><span class="cite">'+t.src+'</span></div></div><div class="trend-tog" onclick="togTrend('+i+')"><span>Expand detail</span><span id="tarr'+i+'">&#8595;</span></div><div class="trend-body" id="tbody'+i+'"><p>'+t.p1+'</p><p>'+t.p2+'</p><p>'+t.p3+'</p><div class="imp"><div class="imp-l">Accenture Implication</div><p>'+t.acn+'</p></div><div class="ris"><div class="ris-l">Risk If Ignored</div><p>'+t.risk+'</p></div></div></div>';
+});
+function togTrend(i){
+  var b=document.getElementById('tbody'+i);
+  var a=document.getElementById('tarr'+i);
+  var open=b.style.display==='block';
+  b.style.display=open?'none':'block';
+  a.innerHTML=open?'&#8595;':'&#8593;';
+}
+
+// ── BUILD SEG BARS ────────────────────────────────────────
+var sb=document.getElementById('seg-bars');
+var bars=[
+  {l:'Ohio Benefits/SNAP (ODJFS)',v:2100,m:3000,c:'#A100FF',t:'$2.1B FY26'},
+  {l:'Child Care & Welfare (DCY)',v:946,m:3000,c:'#d97706',t:'$946M FY27'},
+  {l:'Behavioral Health (DBH)',v:1230,m:3000,c:'#7c3aed',t:'$1.23B FY26'},
+  {l:'Buckeye UI Contract',v:83,m:3000,c:'#0891b2',t:'$83.3M'},
+  {l:'WIOA Workforce — Ohio est.',v:100,m:3000,c:'#0891b2',t:'$100M+ p.a.'}
+];
+bars.forEach(function(b){
+  sb.innerHTML+='<div class="bar-row"><div class="bar-lbl"><span>'+b.l+'</span><span>'+b.t+'</span></div><div class="bar-track"><div class="bar-fill" style="width:'+(b.v/b.m*100)+'%;background:'+b.c+'"></div></div></div>';
+});
+
+// ── BUILD HEATMAP ─────────────────────────────────────────
+var ht=document.getElementById('hm-table');
+ht.innerHTML='<thead><tr><th>Capability Area</th><th>Severity</th><th>Urgency</th><th>Firm Fit</th><th>Scale ($)</th></tr></thead><tbody id="hm-body"></tbody>';
+var hb=document.getElementById('hm-body');
+HM.forEach(function(r){
+  var cells='';
+  [r.s,r.u,r.f].forEach(function(v){
+    cells+='<td><div class="hm-cell" style="background:'+hmBg(v)+';color:'+hmFg(v)+'" title="'+hmLbl(v)+' ('+v+'/4) · '+r.src+'">'+v+'</div></td>';
+  });
+  hb.innerHTML+='<tr><td style="font-family:Arial,sans-serif;font-weight:500">'+r.a+'</td>'+cells+'<td style="text-align:center;font-family:Arial,sans-serif;font-weight:700;color:#A100FF;font-size:12px">'+r.sc+'</td></tr>';
+});
+
+// ── BUILD OPPORTUNITIES ───────────────────────────────────
+var domains=['All'].concat([...new Set(OPPS.map(function(o){return o.domain}))]);
+var of=document.getElementById('opp-filters');
+domains.forEach(function(d){
+  of.innerHTML+='<button class="fbtn'+(d==='All'?' on':'')+'" onclick="filterOpp(\''+d+'\',this)">'+d+'</button>';
+});
+function filterOpp(d,btn){
+  document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  document.querySelectorAll('.opp-card').forEach(function(c){
+    c.style.display=(d==='All'||c.dataset.domain===d)?'flex':'none';
+  });
+}
+var og=document.getElementById('opp-grid');
+OPPS.forEach(function(o,i){
+  var stars='★'.repeat(o.stars)+'☆'.repeat(5-o.stars);
+  og.innerHTML+='<div class="opp-card" data-domain="'+o.domain+'"><div class="opp-top" style="background:'+o.sc+'"></div><div class="opp-body"><div style="margin-bottom:7px"><span class="tag" style="color:'+o.sc+';border-color:'+o.sc+';background:'+o.sc+'18">'+o.domain+'</span><span class="tag" style="color:#78716c;border-color:#e5e2dc;background:#f4f3f0">'+o.seg+'</span></div><div class="stars">'+stars+'</div><div class="opp-title">'+o.title+'</div><div class="opp-why">'+o.why+'</div></div><div class="opp-detail" id="odd'+i+'"><div class="opp-dl">Buyer</div><div class="opp-dd">'+o.buyer+'</div><div class="opp-dl">Angle</div><div class="opp-dd">'+o.angle+'</div><div class="opp-dl">Risks</div><div class="opp-dd">'+o.risks+'</div><div class="deal-box">Est. <span class="amb">'+o.deal+' [ASSUMPTION]</span></div></div><div class="opp-tog" onclick="togOpp('+i+',this)"><span>Deal detail</span><span>&#8595;</span></div></div>';
+});
+function togOpp(i,tog){
+  var d=document.getElementById('odd'+i);
+  var open=d.style.display==='block';
+  d.style.display=open?'none':'block';
+  tog.querySelector('span:last-child').innerHTML=open?'&#8595;':'&#8593;';
+}
+
+// ── BUILD PLAYS ───────────────────────────────────────────
+var pl=document.getElementById('plays-list');
+PLAYS.forEach(function(p,i){
+  pl.innerHTML+='<div class="play"><div class="play-head" onclick="togPlay('+i+')"><div class="play-num">'+p.n+'</div><div class="play-info"><div class="play-t">'+p.title+'</div><div class="play-w">'+p.why+'</div></div><div style="padding:14px;display:flex;align-items:center;color:#78716c" id="parr'+i+'">&#8595;</div></div><div class="play-body" id="pbody'+i+'"><div class="play-grid"><div class="play-cell"><div class="play-cl">Execution Steps</div><div class="play-cv">'+p.steps+'</div></div><div class="play-cell"><div class="play-cl">Buyers</div><div class="play-cv">'+p.buyers+'</div></div><div class="play-cell"><div class="play-cl">Accenture Assets</div><div class="play-cv">'+p.assets+'</div></div><div class="play-cell"><div class="play-cl">Risks</div><div class="play-cv">'+p.risks+'</div></div></div><div class="play-val"><span class="play-vl">Estimated value <span style="font-size:9px;border:1px dashed #b45309;color:#b45309;border-radius:3px;padding:1px 5px;margin-left:4px">ASSUMPTION</span></span><span class="play-vv">'+p.val+'</span></div></div></div>';
+});
+function togPlay(i){
+  var b=document.getElementById('pbody'+i);
+  var a=document.getElementById('parr'+i);
+  var open=b.style.display==='block';
+  b.style.display=open?'none':'block';
+  a.innerHTML=open?'&#8595;':'&#8593;';
+}
+
+// ── BUILD TIMELINE ────────────────────────────────────────
+var tlc=document.getElementById('tl-container');
+TIMELINE.forEach(function(e,i){
+  var showYr=(i===0||TIMELINE[i-1].yr!==e.yr);
+  tlc.innerHTML+='<div class="tl"><div class="tl-yr" style="visibility:'+(showYr?'visible':'hidden')+'">'+e.yr+'</div><div class="tl-tr"><div class="tl-dot"></div><div class="tl-ln"></div></div><div class="tl-con"><div class="tl-eh" onclick="togTl('+i+')">'+e.ev+'</div><div class="tl-es">'+e.sub+'</div><div class="tl-ins" id="tins'+i+'"><p>'+e.ins+'</p><small>Source: '+e.src+'</small></div></div></div>';
+});
+function togTl(i){
+  var el=document.getElementById('tins'+i);
+  el.style.display=el.style.display==='block'?'none':'block';
+}
+
+// ── BUILD GTM ─────────────────────────────────────────────
+var gtmData=[
+  {icon:'🎯',color:'#A100FF',title:'Target Accounts',items:['Ohio Dept of Job & Family Services (ODJFS)','Ohio Dept of Children & Youth (DCY) — Greenfield','Ohio DAS / InnovateOhio Platform','Ohio Public Employees Retirement System (OPERS)','State Teachers Retirement System (STRS Ohio)','Governor\'s Executive Workforce Board']},
+  {icon:'🚪',color:'#0891b2',title:'Entry Points',items:['FOIA → DCY IT roadmap (immediate, ORC §149.43)','Ohio Benefits integration RFP (procure.ohio.gov)','Workforce Pell readiness brief to ODJFS OWD (Q2 2026)','Ohio Digital Government Summit / GIS Ohio 2026','NASCIO/InnovateOhio AI peer group participation','Ohio IT Leadership Forum 2026']},
+  {icon:'🤝',color:'#d97706',title:'Partners & Channels',items:['Geographic Solutions Inc. — subcontract (Buckeye UI)','InnovateOhio Platform / DAS OIT — AI delivery','Community Solutions — policy intelligence partner','OhioX — AI strategy intelligence','Ohio Innovation & Technology Association (OITA)','Jobs Ohio / Governor\'s Workforce Board']},
+  {icon:'⚠️',color:'#d95f00',title:'Key Risks',items:['Deloitte/Maximus/ICF incumbent at ODJFS','DCY procurement undefined (no RFP March 2026)','DOGE-driven federal fund reductions (SNAP/Medicaid)','WIOA reauthorisation uncertainty','Geographic Solutions prime may self-perform work','Political sensitivity of child welfare AI deployments']},
+  {icon:'💰',color:'#2e7d32',title:'Revenue Sizing',items:['Eligibility Systems: $25–55M [ASSUMPTION] 2026–28','Workforce & Employment: $13–26M [ASSUMPTION]','Child Welfare (DCY): $21–45M [ASSUMPTION]','Pensions (OPERS/STRS): $5–12M [ASSUMPTION]','Data & AI (cross-cutting): $10–20M [ASSUMPTION]','Total TAM Estimate: $74–158M [ASSUMPTION]']},
+  {icon:'🗺️',color:'#7c3aed',title:'12–36 Month Roadmap',items:['Q2 2026: DCY FOIA + Ohio Benefits integration brief','Q3 2026: Workforce Pell readiness advisory engagement','Q4 2026: Buckeye UI analytics subcontract position','Q1 2027: Ohio AI Council governance advisory RFP','Q2 2027: CSBG integration advisory (DOD→ODJFS)','Q4 2027: WIOA reauthorisation readiness advisory']}
+];
+var gg=document.getElementById('gtm-grid');
+gtmData.forEach(function(c){
+  var items=c.items.map(function(it){return'<div class="gtm-item'+(it.includes('[ASSUMPTION]')?' amb':'')+'">'+(it.includes('[ASSUMPTION]')?it.replace('[ASSUMPTION]','<span class="amb-badge">ASSUMPTION</span>'):it)+'</div>';}).join('');
+  gg.innerHTML+='<div class="gtm-card"><div class="gtm-head"><div class="gtm-icon" style="background:'+c.color+'18">'+c.icon+'</div><div class="gtm-t">'+c.title+'</div></div><div class="gtm-bd">'+items+'</div></div>';
+});
+
+// ── BUILD GANTT ───────────────────────────────────────────
+var ganttRows=[
+  {l:'Ohio Benefits Integration',c:'#A100FF',s:0,n:9},
+  {l:'Buckeye UI Analytics Sub.',c:'#0891b2',s:6,n:9},
+  {l:'DCY IT Strategy & Case Mgmt',c:'#d97706',s:3,n:21},
+  {l:'Ohio AI Council Advisory',c:'#7c3aed',s:9,n:12},
+  {l:'WIOA/Workforce Pell Readiness',c:'#0891b2',s:3,n:6},
+  {l:'JMOC Compliance Infra.',c:'#A100FF',s:0,n:9},
+  {l:'OPERS/STRS WEP-GPO Systems',c:'#2e7d32',s:0,n:9},
+  {l:'DCY Child Care Voucher Launch',c:'#d97706',s:6,n:6},
+  {l:'CSBG Integration (DOD→ODJFS)',c:'#A100FF',s:9,n:9},
+  {l:'WIOA Reauth Advisory',c:'#0891b2',s:18,n:9}
+];
+var gc=document.getElementById('gantt');
+ganttRows.forEach(function(r){
+  gc.innerHTML+='<div class="gantt-row"><div class="gantt-lbl">'+r.l+'</div><div class="gantt-track"><div class="gantt-bar" style="left:'+(r.s/36*100)+'%;width:'+(r.n/36*100)+'%;background:'+r.c+'"></div></div></div>';
+});
+
+// ── BUILD SOURCES ─────────────────────────────────────────
+var sg=document.getElementById('src-grid');
+var tc2={1:'#2e7d32',2:'#0891b2'};
+var tl2={1:'Tier 1 Primary',2:'Tier 2 Secondary'};
+SOURCES.forEach(function(s){
+  sg.innerHTML+='<div class="src-card"><div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px"><span class="src-tier" style="background:'+tc2[s.t]+'18;color:'+tc2[s.t]+';border:1px solid '+tc2[s.t]+'40">'+tl2[s.t]+'</span><div><div class="src-t">'+s.title+'</div><div class="src-pub">'+s.pub+' · '+s.date+'</div></div></div><div class="src-note">'+s.note+'</div><a class="src-url" href="'+s.url+'" target="_blank">'+s.url+'</a></div>';
+});
+</script>
+</body>
+</html>
