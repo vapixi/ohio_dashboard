@@ -309,11 +309,14 @@ body{font-family:Georgia,'Times New Roman',serif;background:#f4f3f0;color:#1c191
 </div><!-- /main -->
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
 function goTo(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  document.querySelectorAll('.nav-a').forEach(a=>a.classList.remove('active'));
+  document.querySelectorAll('.nav-a').forEach(function(a){a.classList.remove('active')});
   event.target.classList.add('active');
 }
+window.goTo = goTo;
 
 // ── DATA ──────────────────────────────────────────────────
 var TRENDS=[
@@ -513,6 +516,15 @@ var tl2={1:'Tier 1 Primary',2:'Tier 2 Secondary'};
 SOURCES.forEach(function(s){
   sg.innerHTML+='<div class="src-card"><div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px"><span class="src-tier" style="background:'+tc2[s.t]+'18;color:'+tc2[s.t]+';border:1px solid '+tc2[s.t]+'40">'+tl2[s.t]+'</span><div><div class="src-t">'+s.title+'</div><div class="src-pub">'+s.pub+' · '+s.date+'</div></div></div><div class="src-note">'+s.note+'</div><a class="src-url" href="'+s.url+'" target="_blank">'+s.url+'</a></div>';
 });
+
+// expose toggle functions globally
+window.togTrend=togTrend;
+window.togOpp=togOpp;
+window.togPlay=togPlay;
+window.togTl=togTl;
+window.filterOpp=filterOpp;
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
